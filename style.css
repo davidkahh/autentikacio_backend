@@ -1,0 +1,118 @@
+/* Minden elem alaphelyzetbe állítása */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+/* Az oldal teljes háttere */
+body{
+
+    /* Betűtípus */
+    font-family: Arial, sans-serif;
+
+    /* Színátmenetes háttér */
+    background: linear-gradient(
+        135deg,
+        #4facfe,
+        #00f2fe
+    );
+
+    /* Minimum teljes képernyő magasság */
+    min-height:100vh;
+
+    /* Középre igazítás */
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+/* A teljes tartalom tárolója */
+.container{
+    width:400px;
+    text-align:center;
+}
+
+/* Főcím */
+h1{
+    color:white;
+    margin-bottom:10px;
+}
+
+/* Alcím */
+.subtitle{
+    color:white;
+    margin-bottom:20px;
+}
+
+/* A fehér kártyák */
+.card{
+
+    background:white;
+
+    padding:25px;
+
+    margin-bottom:20px;
+
+    border-radius:15px;
+
+    /* Árnyék a modernebb kinézetért */
+    box-shadow:0 5px 15px rgba(0,0,0,0.2);
+}
+
+/* Kártya címei */
+.card h2{
+    margin-bottom:15px;
+}
+
+/* Szövegbeviteli mezők */
+input{
+
+    width:100%;
+
+    padding:12px;
+
+    margin:8px 0;
+
+    border:1px solid #ccc;
+
+    border-radius:8px;
+
+    outline:none;
+}
+
+/* Ha rákattintok egy mezőre */
+input:focus{
+    border-color:#4facfe;
+}
+
+/* Gombok */
+button{
+
+    width:100%;
+
+    padding:12px;
+
+    margin-top:10px;
+
+    background:#4facfe;
+
+    color:white;
+
+    border:none;
+
+    border-radius:8px;
+
+    cursor:pointer;
+}
+
+/* Egér ráhúzása esetén */
+button:hover{
+    background:#2196f3;
+}
+
+/* Üzenetek */
+p{
+    margin-top:10px;
+    font-weight:bold;
+}

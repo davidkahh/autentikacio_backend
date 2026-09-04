@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+
+    <!-- Magyar karakterek helyes megjelenítése -->
+    <meta charset="UTF-8">
+
+    <!-- Telefonon és kisebb képernyőn is jól jelenjen meg -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Az oldal neve a böngésző fülén -->
+    <title>Felhasználói Rendszer</title>
+
+    <!-- CSS fájl összekapcsolása -->
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <!-- Az oldal főcíme -->
+        <h1>🔐 Felhasználói Rendszer</h1>
+
+        <p class="subtitle">
+            Egyszerű regisztrációs és bejelentkezési oldal
+        </p>
+
+        <!-- REGISZTRÁCIÓS RÉSZ -->
+        <div class="card">
+
+            <h2>📝 Regisztráció</h2>
+
+            <!-- Felhasználónév bekérése -->
+            <input type="text"
+                   id="regUser"
+                   placeholder="Felhasználónév">
+
+            <!-- Email cím bekérése -->
+            <input type="email"
+                   id="regEmail"
+                   placeholder="Email cím">
+
+            <!-- Jelszó bekérése -->
+            <input type="password"
+                   id="regPass"
+                   placeholder="Jelszó">
+
+            <!-- A gomb megnyomásakor a regisztracio() függvény fut le -->
+            <button onclick="regisztracio()">
+                Regisztráció
+            </button>
+
+            <!-- Ide írja ki a program az eredményt -->
+            <p id="regMessage"></p>
+
+        </div>
+
+        <!-- BEJELENTKEZÉSI RÉSZ -->
+        <div class="card">
+
+            <h2>🔑 Bejelentkezés</h2>
+
+            <!-- Email cím megadása -->
+            <input type="email"
+                   id="loginEmail"
+                   placeholder="Email cím">
+
+            <!-- Jelszó megadása -->
+            <input type="password"
+                   id="loginPass"
+                   placeholder="Jelszó">
+
+            <!-- A gomb megnyomásakor a bejelentkezes() függvény fut le -->
+            <button onclick="bejelentkezes()">
+                Bejelentkezés
+            </button>
+
+            <!-- Ide kerül a sikeres vagy sikertelen üzenet -->
+            <p id="loginMessage"></p>
+
+        </div>
+
+    </div>
+
+    <script>
+
+        // -------------------------------------------------
+        // REGISZTRÁCIÓS FÜGGVÉNY
+        // -------------------------------------------------
+        // Ez a függvény akkor indul el,
+        // amikor a felhasználó a Regisztráció gombra kattint.
+        function regisztracio() {
+
+            // Lekérem a mezőkbe beírt adatokat
+            let nev = document.getElementById("regUser").value;
+            let email = document.getElementById("regEmail").value;
+            let jelszo = document.getElementById("regPass").value;
+
+            // Ellenőrzöm hogy valamelyik mező üres-e
+            if (nev === "" || email === "" || jelszo === "") {
+
+                // Hibaüzenet megjelenítése
+                document.getElementById("regMessage").innerHTML =
+                "❌ Tölts ki minden mezőt!";
+
+                // Az üzenet piros színű lesz
+                document.getElementById("regMessage").style.color = "red";
+
+                // A függvény itt leáll
+                return;
+            }
+
+            // Az adatokat elmentem a böngésző memóriájába
+            // Ez nem adatbázis, csak egy egyszerű tárolás
+            localStorage.setItem("felhasznalonev", nev);
+            localStorage.setItem("email", email);
+            localStorage.setItem("jelszo", jelszo);
+
+            // Sikeres regisztráció üzenet
+            document.getElementById("regMessage").innerHTML =
+            "✅ Sikeres regisztráció!";
+
+            // Zöld színű üzenet
+            document.getElementById("regMessage").style.color =
+            "limegreen";
+        }
+
+        // -------------------------------------------------
+        // BEJELENTKEZÉSI FÜGGVÉNY
+        // -------------------------------------------------
+        // Ez a függvény a Bejelentkezés gomb megnyomásakor fut le.
+        function bejelentkezes() {
+
+            // Lekérem a felhasználó által beírt adatokat
+            let email =
+            document.getElementById("loginEmail").value;
+
+            let jelszo =
+            document.getElementById("loginPass").value;
+
+            // Lekérem a regisztrációkor eltárolt adatokat
+            let mentettEmail =
+            localStorage.getItem("email");
+
+            let mentettJelszo =
+            localStorage.getItem("jelszo");
+
+            // Összehasonlítom a beírt adatokat
+            // a korábban eltárolt adatokkal
+            if (
+                email === mentettEmail &&
+                jelszo === mentettJelszo
+            ) {
+
+                // Ha minden adat egyezik,
+                // akkor sikeres bejelentkezést ír ki
+                document.getElementById("loginMessage").innerHTML =
+                "✅ Sikeres bejelentkezés!";
+
+                document.getElementById("loginMessage").style.color =
+                "limegreen";
+
+            } else {
+
+                // Ha valamelyik adat hibás,
+                // akkor hibaüzenetet ír ki
+                document.getElementById("loginMessage").innerHTML =
+                "❌ Hibás email vagy jelszó!";
+
+                document.getElementById("loginMessage").style.color =
+                "red";
+            }
+        }
+
+    </script>
+
+</body>
+</html>
