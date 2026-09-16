@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bejelentkezés</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>🔐 Bejelentkezés</h1>
+        <p class="subtitle">MySQL adatbázisra kötött bejelentkezés</p>
+
+        <div class="card">
+            <h2>🔑 Belépés</h2>
+            <form id="loginForm">
+                <input type="text" id="loginUser" placeholder="Felhasználónév vagy email" required>
+                <input type="password" id="loginPass" placeholder="Jelszó" required>
+                <button type="submit">Bejelentkezés</button>
+                <p id="loginMessage"></p>
+            </form>
+            <p class="switch-link">
+                Nincs fiókod? <a href="regisztralas.html">Regisztrálj itt</a>
+            </p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

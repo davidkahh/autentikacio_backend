@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Regisztráció</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>📝 Regisztráció</h1>
+        <p class="subtitle">Új felhasználó létrehozása MySQL-ben</p>
+
+        <div class="card">
+            <h2>👤 Új fiók</h2>
+            <form id="registerForm">
+                <input type="text" id="regName" placeholder="Teljes név" required>
+                <input type="text" id="regUser" placeholder="Felhasználónév" required>
+                <input type="email" id="regEmail" placeholder="Email cím" required>
+                <input type="password" id="regPass" placeholder="Jelszó" required>
+                <button type="submit">Regisztráció</button>
+                <p id="regMessage"></p>
+            </form>
+            <p class="switch-link">
+                Már van fiókod? <a href="bejelentkezes.html">Jelentkezz be</a>
+            </p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
