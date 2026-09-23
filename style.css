@@ -12,11 +12,7 @@ body{
     font-family: Arial, sans-serif;
 
     /* Színátmenetes háttér */
-    background: linear-gradient(
-        135deg,
-        #4ffe5e,
-        #00f2fe
-    );
+    background-image: url('https://images.hdqwalls.com/download/spider-man-weaving-his-web-cl-1920x1080.jpg');
 
     /* Minimum teljes képernyő magasság */
     min-height:100vh;
