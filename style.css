@@ -12,19 +12,16 @@ body{
     font-family: Arial, sans-serif;
 
     /* Színátmenetes háttér */
-    background: linear-gradient(
-        135deg,
-        #4ffe5e,
-        #00f2fe
-    );
+    background-image: url('https://images.hdqwalls.com/download/spider-man-weaving-his-web-cl-1920x1080.jpg');
 
     /* Minimum teljes képernyő magasság */
     min-height:100vh;
 
     /* Középre igazítás */
     display:flex;
-    justify-content:center;
+    justify-content:right;
     align-items:center;
+    margin-right:8% ;
 }
 
 /* A teljes tartalom tárolója */
@@ -48,7 +45,7 @@ h1{
 /* A fehér kártyák */
 .card{
 
-    background:white;
+    background:rgba(117, 126, 117, 0.747);
 
     padding:25px;
 
@@ -63,6 +60,7 @@ h1{
 /* Kártya címei */
 .card h2{
     margin-bottom:15px;
+    color: white;
 }
 
 /* Szövegbeviteli mezők */
@@ -115,4 +113,21 @@ button:hover{
 p{
     margin-top:10px;
     font-weight:bold;
+}
+
+.switch-link {
+    margin-top: 15px;
+    font-size: 14px;
+    font-weight: normal;
+    color: white;
+}
+
+.switch-link a {
+    color: #2196f3;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.switch-link a:hover {
+    text-decoration: underline;
 }
